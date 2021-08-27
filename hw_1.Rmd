@@ -1,0 +1,11 @@
+---
+title: "Homework 1"
+output: github_document
+---
+
+
+my __lipgloss__ is *poppin*
+
+```{r}
+2+2
+```
