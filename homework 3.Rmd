@@ -1,0 +1,15 @@
+---
+title: "Hw_3"
+output: github_document
+---
+# introduction: Within the mpg dataset, I wanted to investigate the relationship between manufacturers and highway mileage within the different classes of vehicles.
+```{r data}
+library(tidyverse)
+data(mpg)
+print(mpg)
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = manufacturer, y = hwy, colour = class))
+
+
+```
+This plot suggests that classes of vehicle seem to be the determinant of highway mileage, rather than the manufacturers of those cars. So to put in simpler terms; rather than buying a car based on the manufacturer, put more consideration into the vehicle class and your lifestyle. 
