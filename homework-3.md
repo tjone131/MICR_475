@@ -1,7 +1,11 @@
 Hw\_3
 ================
 
-# introduction: Within the mpg dataset, I wanted to investigate the relationship between manufacturers and highway mileage within the different classes of vehicles.
+# introduction:
+
+Within the mpg dataset, I wanted to investigate the relationship between
+manufacturers and highway mileage within the different classes of
+vehicles.
 
 ``` r
 library(tidyverse)
@@ -47,4 +51,4 @@ ggplot(data = mpg) +
 that classes of vehicle seem to be the determinant of highway mileage,
 rather than the manufacturers of those cars. So to put in simpler terms;
 rather than buying a car based on the manufacturer, put more
-consideration into the vehicle class and your lifestyle.
+consideration into the vehicle class and your lifestyle!
