@@ -1,0 +1,21 @@
+---
+title: "practice"
+author: "Theresa Jones"
+date: "9/8/2021"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r WE GON GET THIS RIGHT}
+
+2+2
+
+mean(2,4,5,6,7)
+
+**alright now** 
+
+```
+
+
+
