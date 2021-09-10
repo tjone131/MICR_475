@@ -1,0 +1,32 @@
+---
+title: "Homework 4"
+author: "Theresa Jones"
+date: "9/10/2021"
+output: github_document
+
+---
+
+# homework 4 :)
+
+```{r homework parte uno}
+library("tidyverse")
+a <- 3
+b <- 2
+print(a+b)
+sum(a,b)
+```
+
+```{r homework parte dos}
+library("nycflights13")
+```
+now we're going to make the AA data frame
+
+```{r homework parte tres}
+data("flights")
+names(flights)
+head(flights)
+AA_flights <- filter(flights, carrier == "AA")
+
+ggplot(data = AA_flights) + 
+  geom_point(mapping = aes(x = dep_delay, y = arr_delay))
+```
