@@ -8,7 +8,7 @@ output: github_document
 
 # homework 4 :)
 
-```{r homework parte uno}
+```{r homework parte uno message=FALSE, warning=FALSE}
 library("tidyverse")
 a <- 3
 b <- 2
@@ -16,12 +16,12 @@ print(a+b)
 sum(a,b)
 ```
 
-```{r homework parte dos}
+```{r homework parte dos message=FALSE, warning=FALSE}
 library("nycflights13")
 ```
 now we're going to make the AA data frame
 
-```{r homework parte tres}
+```{r homework parte tres message=FALSE, warning=FALSE}
 data("flights")
 names(flights)
 head(flights)
