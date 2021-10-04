@@ -1,0 +1,27 @@
+---
+title: "homework 7"
+author: "Theresa Jones"
+date: "10/4/2021"
+output: html_document
+---
+
+```{r, message=FALSE, warning=FALSE, eval=TRUE}
+library(tidyverse)
+data("iris")
+iris
+
+```
+```{r, message=FALSE, warning=FALSE, eval=TRUE}
+ggplot(data=iris, mapping=aes(x= Sepal.Length, y= Petal.Length))+
+         geom_point()
+
+petals.n.sepals <- ggplot(data=iris, mapping=aes(x= Sepal.Length, y= Petal.Length))+
+         geom_point()
+```
+```{r, message=FALSE, warning=FALSE, eval=TRUE}
+petals.n.sepals + 
+  xlab(NULL) + 
+  ylab(NULL)
+```
+
+
