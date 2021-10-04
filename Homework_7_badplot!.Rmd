@@ -23,5 +23,7 @@ petals.n.sepals +
   xlab(NULL) + 
   ylab(NULL)
 ```
-
+```{r, message=FALSE, warning=FALSE, eval=TRUE}
+  The first issue with this plot is the missing axis titles. This goes against the princple of graphical integrity that covers clear labeling of the graph and the data, and is discussed better in section 22.2 of the data visualization guide by Wilke. The lack of axis labels does not give the reader/viewer any sense of the context of the relationship displayed on the plot. There is also no type of legend to define what the datapoints might be, so while there is a positive correlation shown, there is no information as to what there is a correlation between. The units of measurement for the quantities shown on the graph, so again we cannot be sure that we are using the best range for our data, since we do not have any context to make an assumption of the data making sense. 
+```
 
