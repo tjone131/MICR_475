@@ -8,9 +8,11 @@ output: html_document
 ```{r, message=FALSE, warning=FALSE, eval=TRUE}
 library(tidyverse)
 data("iris")
+iris
 ```
+
 ```{r, message=FALSE, warning=FALSE, eval=TRUE}
-ggplot(data=iris, mapping=aes(x= Sepal.Length, y= Petal.Length))+
+ggplot(data=iris, mapping=aes(x= Sepal.Length(cm), y= Petal.Length(cm))+
          geom_point()
 
 petals.n.sepals <- ggplot(data=iris, mapping=aes(x= Sepal.Length, y= Petal.Length))+
