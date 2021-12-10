@@ -1,0 +1,51 @@
+---
+title: "homework 5_plots for flights"
+author: "Theresa Jones"
+date: "9/17/2021"
+output: github_document
+---
+
+```{r, message=FALSE, warning=FALSE, eval=TRUE}
+library(tidyverse)
+library(dplyr)
+glimpse(diamonds)
+```
+
+```{r question #1, message=FALSE, warning=FALSE, eval=TRUE}
+diamonds %>% count(cut)
+cuts.of.diamonds <- diamonds %>% count(cut)
+```
+```{r question #2}
+sample_frac(diamonds,.01,replace=TRUE)
+```
+```{r question #3, message=FALSE, warning=FALSE, eval=TRUE}
+diamonds%>%
+  group_by(clarity) %>%
+  slice_max(carat, n=100) %>%
+  summarise(large.size.average = mean(carat, na.rm = TRUE))
+```
+```{r question #part 1, message=FALSE, warning=FALSE, eval=TRUE}
+ggplot(diamonds, aes(x=x, y=y)) +
+  geom_point()
+```
+```{r question #4 part 2, message=FALSE, warning=FALSE, eval=TRUE}
+ggplot(diamonds, aes(x=y, y=x))+
+  geom_point()
+```
+```{r question #5, }
+outliers1 <- diamonds %>%
+  filter( x >= 3 & x <= 12) 
+```
+
+```{r, message=FALSE, warning=FALSE, eval=TRUE}
+outliers2 <- diamonds %>%
+  filter( y >= 0 & y <= 12) 
+```
+```{r, message=FALSE, warning=FALSE, eval=TRUE }
+diamonds_new <- full_join(outliers1, outliers2, by = color)
+diamonds_new
+ggplot(diamonds_new, aes(x=y, y=x))+
+  geom_point()
+```
+
+
