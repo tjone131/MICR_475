@@ -3,8 +3,7 @@ Homework\_6\_plot\_analyses
 Theresa Jones
 10/9/2021
 
-! [bad
-plot](/Users/theresajones/Reproducable%20Data%20Analysis/A-Graph-showing-the-relationship-between-Toxoplasma-gondii-infection-and-Socio-economic.png)
+![A-Graph-showing-the-relationship-between-Toxoplasma-gondii-infection-and-Socio-economic](https://user-images.githubusercontent.com/89625876/145640637-28e5c2bb-d5a2-45bf-bbb9-36664c8b2871.png)
 
 In this plot, the data named toxoplasma infection outcome is shown on
 the Y axis with socioeconomic status on the X axis. This plot is “bad”
@@ -22,3 +21,4 @@ that is detailed and a less mouthy title. There could also be better
 axis titles that give the reader information to actually understand the
 data presented. The two lines don’t need to be there if there is a
 relationship between the two plotted variables is shown in one line.
+
