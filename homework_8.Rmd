@@ -1,0 +1,149 @@
+---
+title: "homework 8"
+author: "Theresa Jones"
+date: "10/22/2021"
+output: github_document
+---
+
+```{r,  message=FALSE, warning=FALSE, eval=TRUE}
+library(tidyverse)
+library(modelr)
+data("diamonds")
+```
+
+```{r,  message=FALSE, warning=FALSE, eval=TRUE}
+ggplot(data = diamonds) + 
+  geom_point(aes(x = carat, y = price, color = color))
+```
+
+```{r}
+ggplot(data = diamonds) + 
+  geom_line(aes(x = carat, y = price))
+```
+
+```{r Question 1}
+ice_by_price <- lm(formula = carat ~ price, data= diamonds)
+summary("ice_by_price")
+```
+
+```{r}
+g_nest <- diamonds %>%
+  group_by(cut, color, clarity, depth, table, x, y, z) %>%
+  nest()
+
+g_nest <- g_nest %>%
+  mutate(fit = map(data, icy_by_price))
+
+icy_pricey_slope1 <- function(fit_obj){
+  slope <- coef(fit_obj)[2]
+  slope
+}
+g_nest <- g_nest %>%
+   mutate(slope = map_dbl(fit, icy_pricey_slope1))
+
+```
+
+
+```{r,  message=FALSE, warning=FALSE, eval=TRUE}
+icy_pricey <- function(diamonds) {
+  icy_pricey_model <- lm(carat ~ price, data=diamonds)
+  icy_pricey_model
+}
+
+```
+
+```{r, message=FALSE, warning=FALSE, eval=TRUE}
+
+```
+
+
+```{r Question 2}
+library(nls2)
+data("DNase")
+
+square.root <- formula(density ~ beta_1 * sqrt(conc) + beta_0)
+
+summary(square.root)
+by_run <- DNase %>% 
+  group_by(Run) %>% 
+  nest()
+
+run_model <- function(DNase) {
+  nls2(square.root, 
+                    data = DNase, 
+                    start = list(beta_1 = 0.5, beta_0 = 0.1))
+}
+
+
+by_run1 <- by_run %>% 
+  mutate(model = map(data, run_model))
+
+
+glance <- by_run1 %>% 
+  mutate(glance = map(model, broom::glance)) %>% 
+  unnest(glance)
+
+glance %>%
+  arrange(AIC) %>%
+  head()
+
+
+ggplot(glance, aes(x=Run, y=AIC)) + 
+  geom_boxplot() + 
+  geom_jitter(width = 0.3, height = 0)
+
+```
+
+
+```{r Monod Model}
+monod <- formula(density ~ (conc * d_max) / (conc + k))
+
+summary(monod)
+
+by_run <- DNase %>% 
+  group_by(Run) %>% 
+  nest()
+
+run2_model <- function(DNase) {
+  nls2(monod, 
+                    data = DNase, 
+                    start = list(d_max = 0.5, k = 0.1))
+}
+
+by_run2 <- by_run %>% 
+  mutate(model = map(data, run2_model))
+
+
+glance <- by_run2 %>% 
+  mutate(glance = map(model, broom::glance)) %>% 
+  unnest(glance)
+
+glance %>%
+  arrange(AIC) %>%
+  head()
+
+
+ggplot(glance, aes(x=Run, y=AIC)) + 
+  geom_boxplot() + 
+  geom_jitter(width = 0.3, height = 0)
+
+```
+The monod model has the lower AIC value, so it would be best to use when analyzing ELISA data.
+
+
+g_nest <- g_nest %>%
+  mutate(fit = map(data, icy_pricey))
+
+icy_pricey_slope1 <- function(fit_obj){
+  slope <- coef(fit_obj)[2]
+  slope
+}
+g_nest <- g_nest %>%
+   mutate(slope = map_dbl(fit, icy_pricey_slope1))
+
+
+
+ggplot(data = diamonds, aes(x = carat, y = price)) +
+         geom_point()+ 
+  ggtitle("diamond price ~ carat")+
+  facet_wrap( ~ color)
