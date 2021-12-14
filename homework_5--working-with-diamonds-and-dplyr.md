@@ -84,6 +84,7 @@ ggplot(data = diamonds) +
 ```
 
 ![](Users/theresajones/Reproducable Data Analysis/question4_chunk1.png)
+![question4_chunk1](https://user-images.githubusercontent.com/89625876/145927981-db2112ab-e327-482c-b75f-80bbc914c85a.png)
 
 ``` r
 ggplot(data = diamonds) +
@@ -91,6 +92,7 @@ ggplot(data = diamonds) +
 ```
 
 ![](Users/theresajones/Reproducable Data Analysis/question4_2.png)
+![question4_2](https://user-images.githubusercontent.com/89625876/145928005-7f44b97d-c580-4e1d-a87e-b77d26c98db5.png)
 
 ``` r
 diamonds2 <- filter(diamonds, x > 3 & z < 10 & y < 20 & z > 2)
@@ -99,6 +101,7 @@ ggplot(data = diamonds2) +
 ```
 
 ![](Users/theresajones/question5_chunk1.png)
+![question5_chunk1](https://user-images.githubusercontent.com/89625876/145928097-e4307ebb-0b5b-4761-8177-7626baab2440.png)
 
 ``` r
 ggplot(data = diamonds2) +
@@ -106,3 +109,4 @@ ggplot(data = diamonds2) +
 ```
 
 ![](Users/theresajones/Reproducable Data Analysis/question5_chunk2.png)   
+![question5_chunk2](https://user-images.githubusercontent.com/89625876/145928110-69acec43-de09-4945-be4b-194b9e30c9cc.png)
