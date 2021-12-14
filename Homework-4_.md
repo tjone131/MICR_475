@@ -25,7 +25,8 @@ AA_flights <- filter(flights, carrier == "AA")
 ggplot(data = AA_flights) + 
   geom_point(mapping = aes(x = dep_delay, y = arr_delay))
 ```
+![flightsplot](https://user-images.githubusercontent.com/89625876/145930978-ff83f1e4-2692-4f28-85eb-ed3279c08ca4.png)
 
-    ## Warning: Removed 782 rows containing missing values (geom_point).
+   
 
-![](Homework-4__files/figure-gfm/homework%20parte%20tres-1.png)<!-- -->
+
