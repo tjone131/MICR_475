@@ -46,16 +46,16 @@ sample_frac(diamonds,.01,replace=TRUE)
     ## # A tibble: 539 × 10
     ##    carat cut       color clarity depth table price     x     y     z
     ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
-    ##  1  1.02 Ideal     F     VS1      62      57  8637  6.49  6.44  4.01
-    ##  2  0.3  Very Good F     SI1      62.1    60   500  4.26  4.28  2.65
-    ##  3  0.71 Ideal     H     SI1      62.1    57  2313  5.68  5.73  3.54
-    ##  4  0.76 Ideal     F     SI2      61.1    55  2469  5.9   5.94  3.62
-    ##  5  0.31 Ideal     G     IF       61.3    56   891  4.38  4.4   2.69
-    ##  6  0.5  Ideal     F     VVS1     61      57  2165  5.13  5.16  3.14
-    ##  7  0.3  Premium   H     VS2      62.2    59   608  4.31  4.28  2.67
-    ##  8  0.7  Very Good G     VVS2     62.9    59  2848  5.61  5.68  3.55
-    ##  9  0.35 Very Good G     IF       62.6    59   898  4.43  4.49  2.79
-    ## 10  0.46 Fair      G     VS1      58      66  1035  5.08  5.03  2.93
+    ##  1  0.57 Ideal     F     IF       61.8    54  2974  5.33  5.35  3.3 
+    ##  2  1.01 Ideal     G     SI2      61.5    57  4299  6.5   6.42  3.97
+    ##  3  0.5  Premium   D     VS2      61.4    59  1845  5.15  5.11  3.15
+    ##  4  0.65 Ideal     D     VVS1     61.8    57  4022  5.54  5.56  3.43
+    ##  5  0.52 Very Good D     VS2      63.4    56  1828  5.16  5.09  3.25
+    ##  6  0.82 Premium   H     VS2      62.6    59  2939  5.99  5.93  3.73
+    ##  7  1.01 Very Good F     VS2      62.8    59  6416  6.33  6.41  4   
+    ##  8  1.21 Ideal     G     SI2      62.9    57  4631  6.78  6.73  4.25
+    ##  9  0.53 Very Good F     VS1      61.5    59  1821  5.19  5.22  3.2 
+    ## 10  0.9  Very Good I     VVS1     63.4    57  3872  6.09  6.12  3.87
     ## # … with 529 more rows
 
 ``` r
@@ -83,14 +83,14 @@ ggplot(data = diamonds) +
    geom_point(mapping = aes(x = x, y = y, color = clarity))
 ```
 
-![](homework_5--working-with-diamonds-and-dplyr_files/figure-gfm/question%20#4-1.png)<!-- -->
+![](Users/theresajones/Reproducable Data Analysis/question4_chunk1.png)
 
 ``` r
 ggplot(data = diamonds) +
    geom_point(mapping = aes(x = x, y = z, color = clarity))
 ```
 
-![](homework_5--working-with-diamonds-and-dplyr_files/figure-gfm/question%20#4-2.png)<!-- -->
+![](Users/theresajones/Reproducable Data Analysis/question4_2.png)
 
 ``` r
 diamonds2 <- filter(diamonds, x > 3 & z < 10 & y < 20 & z > 2)
@@ -98,11 +98,11 @@ ggplot(data = diamonds2) +
    geom_point(mapping = aes(x = x, y = y, color = clarity))
 ```
 
-![](homework_5--working-with-diamonds-and-dplyr_files/figure-gfm/question%20#5-1.png)<!-- -->
+![](Users/theresajones/question5_chunk1.png)
 
 ``` r
 ggplot(data = diamonds2) +
    geom_point(mapping = aes(x = x, y = z, color = clarity))
 ```
 
-![](homework_5--working-with-diamonds-and-dplyr_files/figure-gfm/question%20#5-2.png)<!-- -->
+![](Users/theresajones/Reproducable Data Analysis/question5_chunk2.png)   
