@@ -46,19 +46,37 @@ sample_frac(diamonds,.01,replace=TRUE)
     ## # A tibble: 539 × 10
     ##    carat cut       color clarity depth table price     x     y     z
     ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
-    ##  1  1.2  Premium   G     SI2      59.2    60  5278  6.92  6.9   4.09
-    ##  2  0.31 Ideal     G     VS2      62.3    56   544  4.29  4.34  2.69
-    ##  3  1.51 Premium   E     SI2      63      55  9302  7.34  7.3   4.61
-    ##  4  1    Premium   G     VS2      61.6    58  5940  6.39  6.43  3.95
-    ##  5  1.59 Ideal     I     SI2      61.6    57  7978  7.56  7.51  4.64
-    ##  6  0.32 Ideal     E     VS1      61.4    55   713  4.42  4.44  2.72
-    ##  7  1.76 Very Good H     SI1      63.1    59 12288  7.69  7.59  4.82
-    ##  8  1.01 Very Good J     SI2      63.3    53  3088  6.35  6.31  4.01
-    ##  9  0.55 Ideal     H     VVS2     61.7    57  1806  5.28  5.26  3.25
-    ## 10  0.32 Ideal     G     VS2      62.1    56   524  4.36  4.4   2.72
+    ##  1  1.02 Ideal     F     VS1      62      57  8637  6.49  6.44  4.01
+    ##  2  0.3  Very Good F     SI1      62.1    60   500  4.26  4.28  2.65
+    ##  3  0.71 Ideal     H     SI1      62.1    57  2313  5.68  5.73  3.54
+    ##  4  0.76 Ideal     F     SI2      61.1    55  2469  5.9   5.94  3.62
+    ##  5  0.31 Ideal     G     IF       61.3    56   891  4.38  4.4   2.69
+    ##  6  0.5  Ideal     F     VVS1     61      57  2165  5.13  5.16  3.14
+    ##  7  0.3  Premium   H     VS2      62.2    59   608  4.31  4.28  2.67
+    ##  8  0.7  Very Good G     VVS2     62.9    59  2848  5.61  5.68  3.55
+    ##  9  0.35 Very Good G     IF       62.6    59   898  4.43  4.49  2.79
+    ## 10  0.46 Fair      G     VS1      58      66  1035  5.08  5.03  2.93
     ## # … with 529 more rows
 
-`{r question #3, message=FALSE, warning=FALSE, eval=TRUE   group_by(clarity) %>%   slice_max(carat, n=100) %>%   summarize(large.size.average = mean(carat, na.rm = TRUE))`
+``` r
+ clarity_carat <- diamonds %>%
+  group_by(clarity) %>%
+  slice_max(carat, n=100) %>%
+  summarise(average.size = mean (carat, na.rm = TRUE))
+print(clarity_carat)
+```
+
+    ## # A tibble: 8 × 2
+    ##   clarity average.size
+    ##   <ord>          <dbl>
+    ## 1 I1              2.46
+    ## 2 SI2             2.62
+    ## 3 SI1             2.29
+    ## 4 VS2             2.22
+    ## 5 VS1             2.10
+    ## 6 VVS2            1.64
+    ## 7 VVS1            1.50
+    ## 8 IF              1.39
 
 ``` r
 ggplot(data = diamonds) +
